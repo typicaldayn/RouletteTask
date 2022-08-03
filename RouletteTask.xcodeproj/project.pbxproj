@@ -25,6 +25,8 @@
 		BE553C7D289A771300B4C609 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE553C7C289A771300B4C609 /* RegistrationVC.swift */; };
 		BE553C81289A7A9900B4C609 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE553C74289A70C500B4C609 /* GameVC.swift */; };
 		BE553C89289A7F8B00B4C609 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BE553C88289A7F8B00B4C609 /* FirebaseFirestore */; };
+		BE553C8C289AA69C00B4C609 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE553C8B289AA69C00B4C609 /* UserModel.swift */; };
+		BE553C8E289AA85700B4C609 /* FBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE553C8D289AA85700B4C609 /* FBManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		BE553C78289A718E00B4C609 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		BE553C7A289A770400B4C609 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BE553C7C289A771300B4C609 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		BE553C8B289AA69C00B4C609 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BE553C8D289AA85700B4C609 /* FBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			children = (
 				BE553C51289A699500B4C609 /* AppDelegate.swift */,
 				BE553C53289A699500B4C609 /* SceneDelegate.swift */,
+				BE553C8A289AA68D00B4C609 /* Model */,
 				BE553C65289A69AF00B4C609 /* Controllers */,
 				BE553C66289A69BD00B4C609 /* View */,
 				BE553C5A289A699600B4C609 /* Assets.xcassets */,
@@ -111,6 +116,15 @@
 				BE553C57289A699500B4C609 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BE553C8A289AA68D00B4C609 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE553C8B289AA69C00B4C609 /* UserModel.swift */,
+				BE553C8D289AA85700B4C609 /* FBManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +216,10 @@
 				BE553C52289A699500B4C609 /* AppDelegate.swift in Sources */,
 				BE553C7B289A770400B4C609 /* LoginVC.swift in Sources */,
 				BE553C7D289A771300B4C609 /* RegistrationVC.swift in Sources */,
+				BE553C8E289AA85700B4C609 /* FBManager.swift in Sources */,
 				BE553C77289A718100B4C609 /* RatingVC.swift in Sources */,
 				BE553C79289A718E00B4C609 /* RegisterVC.swift in Sources */,
+				BE553C8C289AA69C00B4C609 /* UserModel.swift in Sources */,
 				BE553C54289A699500B4C609 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
