@@ -6,24 +6,41 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegistrationVC: UIViewController {
-
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func registerPressed(_ sender: UIButton) {
+        if let password = passwordTextField.text, let email = emailTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let error = error{
+                    print(error.localizedDescription)
+                }else{
+                    self.performSegue(withIdentifier: "RegisterToGame", sender: self)
+                }
+            }
+        }
     }
-    */
-
+    
+    @IBAction func anonymousPressed(_ sender: UIButton) {
+        Auth.auth().signInAnonymously { authResult, error in
+            if error != nil {
+                fatalError("Couldnt sign anonymously")
+            }
+            guard let user = authResult?.user else { return }
+            let isAnonymous = user.isAnonymous  
+            let uid = user.uid
+            self.performSegue(withIdentifier: "AnonymousToGame", sender: self)
+        }
+    }
+    
 }

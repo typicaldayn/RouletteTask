@@ -9,21 +9,28 @@ import UIKit
 
 class GameVC: UIViewController {
 
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var sizeOfBet: UILabel!
+    @IBOutlet weak var changeAmountOfBet: UIStepper!
+    @IBOutlet weak var userMoney: UILabel!
+    @IBOutlet weak var userName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func playButtonPressed(_ sender: UIButton) {
     }
-    */
-
+    
+    
+    @IBAction func typeOfBetChoosen(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            sender.alpha = 1
+        }else{
+            sender.isSelected = true
+            sender.alpha = 0.5
+        }
+    }
 }
