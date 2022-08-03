@@ -14,7 +14,7 @@ class GameVC: UIViewController {
     var currentUser = Auth.auth().currentUser?.email
     var username: String = ""
     let dataBase = Firestore.firestore()
-    var typesOfBet: [Dictionary<Int, String>] =  [[0: "Green"]]
+    var typesOfBet: [Dictionary<Int, String>] =  [[0: "Green"], [1: "Red"], [2: "Black"], [3: "Red"], [4: "Black"], [5: "Red"], [6: "Black"], [7: "Red"], [8: "Black"], [9: "Red"], [10: "Black"]]
     let result: Dictionary<Int, String>? = [:]
     
     @IBOutlet weak var playButton: UIButton!
@@ -54,9 +54,9 @@ class GameVC: UIViewController {
     }
     
     func loadUser() {
-        FBManager.shared.getUser(collectionName: "Users", userEmail: currentUser ?? "1@2.com") { [weak self] userInfo in
-            self?.userMoney.text = String(userInfo?.money ?? 100)
-            self?.userName.text = userInfo?.name
+        FBManager.shared.getUser(collectionName: "Users", userEmail: currentUser ?? "1@2.com") { userInfo in
+            self.userMoney.text = String(userInfo?.money ?? 2000)
+            self.userName.text = userInfo?.name
         }
     }
     
